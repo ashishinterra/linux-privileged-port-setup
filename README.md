@@ -31,9 +31,9 @@ On CentOS-7.x/RHEL-7.x, instead of running tomcat as root you can also use AUTHB
 #### If above rpm fails then you have to build the rpm yourself from the instructions given below 
 
       svn co https://github.com/tootedom/authbind-centos-rpm.git
-      mkdir /rpmbuild
-      cp -R authbind-centos-rpm.git/trunk/authbind/* /rpmbuild/
-      cd /rpmbuild/SOURCES
+      mkdir /root/rpmbuild
+      cp -R authbind-centos-rpm.git/trunk/authbind/* /root/rpmbuild/
+      cd /root/rpmbuild/SOURCES
       wget http://ftp.debian.org/debian/pool/main/a/authbind/authbind_2.1.1.tar.gz
       mv authbind_2.1.1.tar.gz authbind-2.1.1.tar.gz
       cd ../
