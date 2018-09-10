@@ -38,7 +38,7 @@ On CentOS-7.x/RHEL-7.x, instead of running tomcat as root you can also use AUTHB
       mv authbind_2.1.1.tar.gz authbind-2.1.1.tar.gz
       cd ../
       rpmbuild -v -bb --clean SPECS/authbind.spec
-      rpm -Uvh /rpmbuild/RPMS/x86_64/authbind-2.1.1-0.1.x86_64.rpm  
+      rpm -Uvh /root/rpmbuild/RPMS/x86_64/authbind-2.1.1-0.1.x86_64.rpm  
 
 ### Configure ports for authbind
 
@@ -49,7 +49,7 @@ On CentOS-7.x/RHEL-7.x, instead of running tomcat as root you can also use AUTHB
 Edit the file /etc/systemd/system/multi-user.target.wants/tomcat.service and comment out the original “ExecStart” command, duplicated the line and added authbind as follows:
 
       #ExecStart=/usr/libexec/tomcat/server start
-      ExecStart=/usr/bin/authbind –deep “/usr/libexec/tomcat/server” start
+      ExecStart=/usr/bin/authbind --deep "/usr/libexec/tomcat/server" start
    
 ### Reload and Restart the tomcat
       sudo systemctl daemon-reload
