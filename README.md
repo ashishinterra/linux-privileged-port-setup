@@ -1,4 +1,4 @@
-# Instructions to give priviliged port access to a non-root user for running Tomcat
+# Instructions to give privileged port access to a non-root user for running Tomcat
 
 #### Ignore sudo if root
 
@@ -63,7 +63,7 @@ On CentOS-6.x/RHEL-6.x, instead of running tomcat as root you can also use setca
       
       yum install libcap
       
-### Apply capablities to java binary in order to use priviliged ports on Tomcat
+### Apply capablities to java binary in order to use privileged ports on Tomcat
 
       sudo setcap CAP_NET_BIND_SERVICE=+eip /path_to_java_binary
 
