@@ -11,7 +11,8 @@ On Unbuntu/Debian, instead of running tomcat as root you can also use AUTHBIND t
       sudo chmod 500 /etc/authbind/byport/443
       sudo chown <tomcat-user> /etc/authbind/byport/443
    
-   Edit the file /etc/default/tomcatX or /etc/default/tomcat to change AUTHBIND=no to AUTHBIND=yes
+   Edit the file /etc/default/tomcatX or /etc/default/tomcat to change AUTHBIND=no to AUTHBIND=yes.
+   Where X is the tomcat version number.
    
 ### Reload and Restart the tomcat
 
@@ -30,6 +31,7 @@ On CentOS-7.x/RHEL-7.x, instead of running tomcat as root you can also use AUTHB
       
 #### If above rpm fails then you have to build the rpm yourself from the instructions given below 
 
+      sudo -i (ignore this if already root)
       svn co https://github.com/tootedom/authbind-centos-rpm.git
       mkdir /root/rpmbuild
       cp -R authbind-centos-rpm.git/trunk/authbind/* /root/rpmbuild/
